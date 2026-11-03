@@ -1,0 +1,635 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>حضانة طلائع الإيمان</title>
+
+<style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Tahoma, Arial, sans-serif;
+}
+
+html { scroll-behavior: smooth; }
+
+body {
+    background: #fffaf1;
+    color: #344054;
+}
+
+header {
+    background: #18a68b;
+    padding: 18px 7%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 15px;
+    color: white;
+}
+
+.logo {
+    font-size: 25px;
+    font-weight: bold;
+}
+
+nav {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 17px;
+}
+
+nav a {
+    text-decoration: none;
+    color: white;
+    font-weight: bold;
+}
+
+.hero {
+    padding: 85px 20px;
+    text-align: center;
+    background: linear-gradient(135deg,#d9f7e9,#fff0c9,#fce1ef);
+}
+
+.hero .star {
+    font-size: 55px;
+}
+
+.hero h1 {
+    color: #11836e;
+    font-size: 38px;
+    margin: 20px 0;
+}
+
+.hero p {
+    font-size: 19px;
+    line-height: 2;
+    max-width: 700px;
+    margin: auto;
+}
+
+.btn {
+    display: inline-block;
+    background: #ff9e45;
+    color: white;
+    padding: 14px 28px;
+    border-radius: 30px;
+    text-decoration: none;
+    font-weight: bold;
+    border: none;
+    cursor: pointer;
+    margin-top: 20px;
+}
+
+.btn:hover {
+    background: #ef8125;
+}
+
+section {
+    padding: 65px 8%;
+    text-align: center;
+}
+
+h2 {
+    color: #13977d;
+    font-size: 30px;
+    margin-bottom: 30px;
+}
+
+.about p {
+    font-size: 18px;
+    line-height: 2.2;
+    max-width: 850px;
+    margin: auto;
+}
+
+.cards {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 22px;
+}
+
+.card {
+    background: white;
+    width: 230px;
+    padding: 28px 20px;
+    border-radius: 22px;
+    box-shadow: 0 5px 18px rgba(0,0,0,.07);
+    transition: .3s;
+}
+
+.card:hover {
+    transform: translateY(-6px);
+}
+
+.emoji {
+    font-size: 43px;
+}
+
+.card h3 {
+    color: #15977d;
+    margin: 15px 0;
+}
+
+.card p {
+    line-height: 1.9;
+}
+
+.letters {
+    display: flex;
+    justify-content: center;
+    gap: 6px;
+    direction: rtl;
+}
+
+.letters span {
+    width: 44px;
+    height: 44px;
+    border-radius: 12px;
+    color: white;
+    font-size: 28px;
+    font-weight: bold;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 3px 8px rgba(0,0,0,.12);
+}
+
+.curriculum {
+    display: inline-block;
+    background: #e3f7ed;
+    color: #117461;
+    padding: 5px 14px;
+    border-radius: 20px;
+    font-size: 14px;
+    font-weight: bold;
+    margin-top: 10px;
+}
+
+.info {
+    background: #e3f7ed;
+}
+
+.info-box {
+    display: inline-block;
+    background: white;
+    padding: 25px;
+    margin: 10px;
+    border-radius: 18px;
+    min-width: 200px;
+    font-size: 18px;
+}
+
+.register {
+    background: #fff0d8;
+}
+
+form {
+    max-width: 600px;
+    margin: auto;
+    background: white;
+    padding: 30px;
+    border-radius: 22px;
+    box-shadow: 0 5px 20px #ddd;
+    text-align: right;
+}
+
+label {
+    display: block;
+    margin: 15px 0 8px;
+    font-weight: bold;
+}
+
+input, select, textarea {
+    width: 100%;
+    padding: 13px;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    font-size: 16px;
+    outline-color: #18a68b;
+}
+
+input[readonly] {
+    background: #f2f8f4;
+    color: #117461;
+    font-weight: bold;
+}
+
+textarea {
+    resize: vertical;
+    min-height: 85px;
+}
+
+form button {
+    width: 100%;
+    font-size: 17px;
+}
+
+.contact {
+    background: #dff5eb;
+}
+
+.contact p {
+    margin: 15px;
+    font-size: 18px;
+}
+
+.phone {
+    color: #11836e;
+    font-weight: bold;
+    direction: ltr;
+    display: inline-block;
+}
+
+footer {
+    background: #117461;
+    color: white;
+    padding: 30px;
+    text-align: center;
+    line-height: 2;
+}
+
+.whatsapp {
+    position: fixed;
+    bottom: 20px;
+    left: 20px;
+    background: #25d366;
+    color: white;
+    padding: 14px 20px;
+    border-radius: 35px;
+    text-decoration: none;
+    font-weight: bold;
+    box-shadow: 0 3px 12px #aaa;
+}
+
+@media(max-width:600px) {
+    header {
+        justify-content: center;
+        text-align: center;
+    }
+
+    nav {
+        justify-content: center;
+    }
+
+    .hero h1 {
+        font-size: 28px;
+    }
+
+    section {
+        padding: 45px 5%;
+    }
+
+    .card {
+        width: 100%;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<header>
+    <div class="logo">🌟 حضانة طلائع الإيمان</div>
+
+    <nav>
+        <a href="#home">الرئيسية</a>
+        <a href="#about">عن الحضانة</a>
+        <a href="#activities">الأنشطة</a>
+        <a href="#register">التقديم</a>
+        <a href="#contact">تواصل معنا</a>
+    </nav>
+</header>
+
+<div class="hero" id="home">
+    <div class="star">⭐ 🧸</div>
+
+    <h1>أهلاً بكم في حضانة طلائع الإيمان</h1>
+
+    <p>
+        هنا تبدأ حكاية طفلك الجميلة!
+        نتعلم ونلعب ونزرع القيم والأخلاق،
+        ونساعد أطفالنا على اكتشاف مواهبهم
+        وبناء مستقبل مشرق.
+    </p>
+
+    <a href="#register" class="btn">سجل طفلك الآن</a>
+</div>
+
+<section class="about" id="about">
+    <h2>💚 من نحن؟</h2>
+
+    <p>
+        حضانة طلائع الإيمان بيئة تربوية وتعليمية
+        تهتم بالطفل وتنمية شخصيته ومهاراته،
+        ونسعى للجمع بين التعليم والتربية والترفيه
+        في أجواء مليئة بالحب والاهتمام،
+        مع غرس القيم الإسلامية والأخلاق الحميدة.
+    </p>
+</section>
+
+<section id="activities">
+    <h2>🎨 أنشطتنا وبرامجنا</h2>
+
+    <div class="cards">
+
+        <div class="card">
+            <div class="emoji">📖</div>
+            <h3>تحفيظ القرآن الكريم</h3>
+            <p>حفظ القرآن وتعليم الأذكار والآداب الإسلامية.</p>
+        </div>
+
+        <div class="card">
+            <div class="letters">
+                <span style="background:#ff7a59">أ</span>
+                <span style="background:#18a68b">ب</span>
+                <span style="background:#ff9e45">ت</span>
+                <span style="background:#7c6ff0">ث</span>
+            </div>
+            <h3>التأسيس العربي</h3>
+            <p>تعلم الحروف العربية والقراءة والكتابة بطريقة ممتعة.</p>
+            <div class="curriculum">المنهج: الطريقة النورانية</div>
+        </div>
+
+        <div class="card">
+            <div class="emoji">🔠</div>
+            <h3>التأسيس الإنجليزي</h3>
+            <p>تعلم الحروف والكلمات الإنجليزية الأساسية.</p>
+            <div class="curriculum">المنهج: <span dir="ltr">Phonics</span></div>
+        </div>
+
+        <div class="card">
+            <div class="emoji">🔢</div>
+            <h3>الرياضيات</h3>
+            <p>الأرقام والعد والعمليات الحسابية المناسبة للعمر.</p>
+            <div class="curriculum">المنهج: <span dir="ltr">Math &amp; UCMAS</span></div>
+        </div>
+
+        <div class="card">
+            <div class="emoji">💻</div>
+            <h3>الكمبيوتر</h3>
+            <p>التعرف على أساسيات التكنولوجيا بطريقة مناسبة للأطفال.</p>
+        </div>
+
+        <div class="card">
+            <div class="emoji">🎨</div>
+            <h3>الرسم والتلوين</h3>
+            <p>تنمية الخيال والإبداع واكتشاف المواهب.</p>
+        </div>
+
+        <div class="card">
+            <div class="emoji">⚽</div>
+            <h3>الأنشطة الرياضية</h3>
+            <p>ألعاب حركية تساعد على تنمية المهارات.</p>
+        </div>
+
+        <div class="card">
+            <div class="emoji">🎈</div>
+            <h3>الأنشطة الترفيهية</h3>
+            <p>ألعاب ومسابقات وأنشطة جماعية ممتعة.</p>
+        </div>
+
+        <div class="card">
+            <div class="emoji">🤝</div>
+            <h3>الآداب والأخلاق</h3>
+            <p>تعليم التعاون والصدق والاحترام والسلوك الحسن.</p>
+        </div>
+
+    </div>
+</section>
+
+<section class="info">
+    <h2>🧸 معلومات الحضانة</h2>
+
+    <div class="cards">
+        <div class="info-box">
+            <div class="emoji">👶</div>
+            <h3>الأعمار</h3>
+            <p>من سنة إلى 6 سنوات</p>
+        </div>
+
+        <div class="info-box">
+            <div class="emoji">⏰</div>
+            <h3>مواعيد العمل</h3>
+            <p>من 7 صباحاً إلى 3 عصراً</p>
+        </div>
+
+        <div class="info-box">
+            <div class="emoji">📍</div>
+            <h3>العنوان</h3>
+            <p>الحرير الصناعي</p>
+        </div>
+    </div>
+</section>
+
+<section class="register" id="register">
+    <h2>📝 التقديم الإلكتروني</h2>
+
+    <p style="margin-bottom:25px;line-height:2">
+        يسعدنا استقبال طلب التحاق طفلك بحضانة طلائع الإيمان.
+        املأ البيانات التالية واختر رقم التواصل لإرسال الطلب.
+    </p>
+
+    <form id="registrationForm">
+
+        <label for="childName">اسم الطفل بالكامل</label>
+        <input type="text" id="childName" required
+        placeholder="اكتب اسم الطفل">
+
+        <label for="birthDate">تاريخ ميلاد الطفل</label>
+        <input type="date" id="birthDate" required>
+
+        <label for="age">السن (يُحسب تلقائياً)</label>
+        <input type="text" id="age" readonly
+        placeholder="اختر تاريخ الميلاد ليظهر السن">
+
+        <label for="parentName">اسم ولي الأمر</label>
+        <input type="text" id="parentName" required
+        placeholder="اسم الأب أو الأم">
+
+        <label for="parentPhone">رقم هاتف ولي الأمر</label>
+        <input type="tel" id="parentPhone" required
+        placeholder="رقم الهاتف">
+
+        <label for="notes">ملاحظات إضافية</label>
+        <textarea id="notes"
+        placeholder="أي معلومات إضافية (اختياري)"></textarea>
+
+        <label for="receiver">اختر رقم استقبال الطلب</label>
+        <select id="receiver">
+            <option value="201280445312">01280445312</option>
+            <option value="201113028718">01113028718</option>
+        </select>
+
+        <button type="submit" class="btn">
+            إرسال طلب التقديم عبر واتساب
+        </button>
+
+    </form>
+</section>
+
+<section class="contact" id="contact">
+    <h2>📞 تواصل معنا</h2>
+
+    <p>نسعد بتواصلكم واستفساراتكم.</p>
+
+    <p>📍 العنوان: الحرير الصناعي</p>
+
+    <p>
+        📱
+        <a class="phone" href="tel:01280445312">
+            01280445312
+        </a>
+    </p>
+
+    <p>
+        📱
+        <a class="phone" href="tel:01113028718">
+            01113028718
+        </a>
+    </p>
+
+    <a class="btn"
+    href="https://wa.me/201280445312"
+    target="_blank" rel="noopener">
+        واتساب الرقم الأول
+    </a>
+
+    <a class="btn"
+    href="https://wa.me/201113028718"
+    target="_blank" rel="noopener">
+        واتساب الرقم الثاني
+    </a>
+</section>
+
+<footer>
+    <h2 style="color:white">🌟 حضانة طلائع الإيمان 🌟</h2>
+    <p>نزرع الإيمان... ونبني جيل المستقبل</p>
+    <p>جميع الحقوق محفوظة © 2026</p>
+</footer>
+
+<a class="whatsapp"
+href="https://wa.me/201280445312"
+target="_blank" rel="noopener">
+    💬 تواصل معنا
+</a>
+
+<script>
+(function () {
+    // ===== إعدادات الحفظ التلقائي في Google Sheet =====
+    // الصق هنا رابط Web App اللي هتاخده من Google Apps Script
+    var SCRIPT_URL = "";
+    // الصق هنا رابط الشيت (اختياري) علشان يوصلك مع كل رسالة
+    var SHEET_LINK = "";
+    // ================================================
+
+    var birth = document.getElementById("birthDate");
+    var ageField = document.getElementById("age");
+    var form = document.getElementById("registrationForm");
+
+    // لا يمكن اختيار تاريخ في المستقبل
+    var now = new Date();
+    birth.max = now.getFullYear() + "-" +
+        String(now.getMonth() + 1).padStart(2, "0") + "-" +
+        String(now.getDate()).padStart(2, "0");
+
+    // حساب السن بالسنوات والشهور
+    function calcAge(value) {
+        if (!value) return "";
+        var p = value.split("-");
+        var b = new Date(+p[0], +p[1] - 1, +p[2]);
+        var t = new Date();
+        t.setHours(0, 0, 0, 0);
+        if (isNaN(b.getTime()) || b > t) return "";
+
+        var years = t.getFullYear() - b.getFullYear();
+        var months = t.getMonth() - b.getMonth();
+        if (t.getDate() < b.getDate()) months--;
+        if (months < 0) { years--; months += 12; }
+
+        if (years === 0 && months === 0) return "أقل من شهر";
+        if (years === 0) return months + " شهر";
+
+        var y;
+        if (years === 1) y = "سنة";
+        else if (years === 2) y = "سنتان";
+        else if (years <= 10) y = years + " سنوات";
+        else y = years + " سنة";
+
+        if (months === 0) return y;
+        return y + " و " + months + " شهر";
+    }
+
+    function updateAge() {
+        ageField.value = calcAge(birth.value);
+    }
+
+    birth.addEventListener("input", updateAge);
+    birth.addEventListener("change", updateAge);
+
+    form.addEventListener("submit", function (e) {
+        e.preventDefault();
+
+        var age = calcAge(birth.value);
+        if (!age) {
+            alert("من فضلك اختر تاريخ ميلاد صحيح.");
+            return;
+        }
+        ageField.value = age;
+
+        var notes = document.getElementById("notes").value.trim();
+        var receiverSelect = document.getElementById("receiver");
+
+        var data = {
+            child: document.getElementById("childName").value.trim(),
+            birth: birth.value,
+            age: age,
+            parent: document.getElementById("parentName").value.trim(),
+            phone: document.getElementById("parentPhone").value.trim(),
+            notes: notes || "لا يوجد",
+            receiver: receiverSelect.options[receiverSelect.selectedIndex].text
+        };
+
+        // 1) تسجيل الطلب تلقائياً في الشيت
+        if (SCRIPT_URL) {
+            try {
+                fetch(SCRIPT_URL, {
+                    method: "POST",
+                    mode: "no-cors",
+                    keepalive: true,
+                    headers: { "Content-Type": "text/plain;charset=utf-8" },
+                    body: JSON.stringify(data)
+                }).catch(function () {});
+            } catch (err) {}
+        }
+
+        // 2) فتح واتساب بالرسالة
+        var lines = [
+            "طلب تقديم جديد - حضانة طلائع الإيمان",
+            "",
+            "اسم الطفل: " + data.child,
+            "تاريخ الميلاد: " + data.birth,
+            "السن: " + data.age,
+            "اسم ولي الأمر: " + data.parent,
+            "رقم الهاتف: " + data.phone,
+            "ملاحظات: " + data.notes
+        ];
+        if (SHEET_LINK) {
+            lines.push("", "سجل كل الطلاب: " + SHEET_LINK);
+        }
+
+        window.open(
+            "https://wa.me/" + receiverSelect.value + "?text=" +
+            encodeURIComponent(lines.join("\n")),
+            "_blank"
+        );
+    });
+})();
+</script>
+
+</body>
+</html>
